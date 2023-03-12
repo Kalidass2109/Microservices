@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    Url: jdbc:mysql://localhost:3306/sbmsdb
+    username: root
+    password: Nirallan@2022
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+      dialect: org.hibernater.dialect.MySQL5InnoDBDialect
+  main:
+    allow-bean-definition-overriding: true 
+  cache:
+    type: redis
+    cache-names:
+    - cache1
+    - cache2
+    redis:
+      time-to-live: 60000
+      cache-null-values: true
+  redis:
+    host: localhost
+    port: 6379 
+
+#  level:
+#    root: debug
